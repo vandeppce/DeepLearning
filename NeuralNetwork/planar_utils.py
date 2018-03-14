@@ -31,7 +31,7 @@ def sigmoid(x):
     Return:
     s -- sigmoid(x)
     """
-    s = 1/(1+np.exp(-x))
+    s = 1.0/(1+np.exp(-x))
     return s
 
 def load_planar_dataset():
