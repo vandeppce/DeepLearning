@@ -119,3 +119,117 @@ X_assess1, parameters = forward_propagation_test_case()
 A2, cache = forward_propagation(X_assess1, parameters)
 
 print(np.mean(cache['Z1']), np.mean(cache['A1']), np.mean(cache['Z2']), np.mean(cache['A2']))
+
+def compute_cost(A2, Y, parameters):
+    """
+    Arguments:
+    :param A2: The sigmoid output of the second activation, of shape(1, m)
+    :param Y: "true" labels vector of shape (1, m)
+    :param parameters: python dictionary containing parameters W1, b1, W2, b2
+
+    :return:
+    cost: cross-entropy cost
+    """
+
+    m = A2.shape[1]
+    logprobs = np.multiply(Y, np.log(A2))
+    cost = -1.0 / m * np.sum(logprobs)
+
+    cost = np.squeeze(cost)
+    assert(isinstance(cost, float))
+    # print(cost.dtype)   #float64
+
+    return cost
+
+A2_1, Y_assess_1, parameters = compute_cost_test_case()
+print("cost = " + str(compute_cost(A2_1, Y_assess_1, parameters)))
+
+def backword_propagation(parameters, cache, X, Y):
+    """
+    Arguments:
+    :param parameters: python dictionary containing parameters
+    :param cache: a dictionary containing "Z1", "A1", "Z2" and "A2"
+    :param X: input data of shape (2, m)
+    :param Y: "true" labels vector of shape (1, m)
+
+    :return:
+    grads: python dictionary containing gradients
+    """
+
+    m = X.shape[1]
+
+    W1 = parameters['W1']
+    W2 = parameters['W2']
+
+    A1 = cache["A1"]
+    A2 = cache["A2"]
+
+    Z1 = cache["Z1"]
+    Z2 = cache["Z2"]
+
+    dZ2 = A2 - Y
+    dW2 = 1.0 / m * np.dot(dZ2, A1.T)
+    db2 = 1.0 / m * np.sum(dZ2, axis=1, keepdims=True)
+
+    dZ1 = np.dot(W2.T, dZ2) * (1 - np.power(A1, 2))
+    dW1 = 1.0 / m * np.dot(dZ1, X.T)
+    db1 = 1.0 / m * np.sum(dZ1, axis=1, keepdims=True)
+
+    grads = {"dW1": dW1,
+             "db1": db1,
+             "dW2": dW2,
+             "db2": db2
+             }
+    return grads
+
+parameters, cache, X_assess, Y_assess = backward_propagation_test_case()
+grads = backword_propagation(parameters, cache, X_assess, Y_assess)
+
+print("dW1 = " + str(grads['dW1']))
+print("db1 = " + str(grads['db1']))
+print("dW2 = " + str(grads['dW2']))
+print("db2 = " + str(grads['db2']))
+
+def update_parameters(parameters, grads, learning_rate = 1.2):
+    """
+    Arguments:
+    :param parameters: python dictionary containing parameters
+    :param grads: python dictionary containing gradients
+    :param learning_rate:
+
+    :return:
+    parameters: python dictionary containing updated parameters
+    """
+
+    W1 = parameters["W1"]
+    b1 = parameters["b1"]
+    W2 = parameters["W2"]
+    b2 = parameters["b2"]
+
+    dW1 = grads["dW1"]
+    db1 = grads["db1"]
+    dW2 = grads["dW2"]
+    db2 = grads["db2"]
+
+    W1  = W1 - learning_rate * dW1
+    b1 = b1 - learning_rate * db1
+    W2 = W2 - learning_rate * dW2
+    b2 = b2 - learning_rate * db2
+
+    parameters = {"W1": W1,
+                  "b1": b1,
+                  "W2": W2,
+                  "b2": b2
+                  }
+
+    return parameters
+
+parameters, grads = update_parameters_test_case()
+params = update_parameters(parameters, grads)
+
+print("W1 = " + str(params["W1"]))
+print("b1 = " + str(params["b1"]))
+print("W2 = " + str(params["W2"]))
+print("b2 = " + str(params["b2"]))
+
+
