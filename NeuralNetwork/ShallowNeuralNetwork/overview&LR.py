@@ -1,10 +1,7 @@
-import numpy as np
 import matplotlib.pylab as plt
-from NeuralNetwork.testCases import *
-import sklearn
-import sklearn.datasets
+from NeuralNetwork.ShallowNeuralNetwork.testCases import *
 import sklearn.linear_model
-from NeuralNetwork.planar_utils import plot_decision_boundary, sigmoid, load_planar_dataset, load_extra_datasets
+from NeuralNetwork.ShallowNeuralNetwork.planar_utils import plot_decision_boundary, load_planar_dataset
 
 X, Y = load_planar_dataset()
 plt.scatter(X[0, :], X[1, :], c=np.squeeze(Y), s=40, cmap=plt.cm.Spectral)

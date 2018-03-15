@@ -1,10 +1,6 @@
 import numpy as np
-import scipy
 import matplotlib.pyplot as plt
-from PIL import Image
-import h5py
-from scipy import ndimage
-from NeuralNetwork.lr_utils import load_dataset
+from NeuralNetwork.LogisticRegression.lr_utils import load_dataset
 
 def initialize_with_zeros(x):
     w = np.zeros(shape=(x, 1))

@@ -1,10 +1,6 @@
-import numpy as np
 import matplotlib.pylab as plt
-from NeuralNetwork.testCases import *
-import sklearn
-import sklearn.datasets
-import sklearn.linear_model
-from NeuralNetwork.planar_utils import plot_decision_boundary, sigmoid, load_planar_dataset, load_extra_datasets
+from NeuralNetwork.ShallowNeuralNetwork.testCases import *
+from NeuralNetwork.ShallowNeuralNetwork.planar_utils import sigmoid, load_extra_datasets, plot_decision_boundary, load_planar_dataset
 
 # 1 defining the neural network structure
 def layer_sizes(X, Y):
@@ -311,7 +307,7 @@ print("Accuracy: %d" % float((np.dot(Y, predictions.T) + np.dot(1 - Y, 1 - predi
 '''
 
 # 7 tuning hidden layer size
-'''
+
 X, Y = load_planar_dataset()
 plt.figure(figsize = (16, 32))
 hidden_layer_sizes = [1, 2, 3, 4, 5, 20, 50]
@@ -324,7 +320,7 @@ for i, n_h in enumerate(hidden_layer_sizes):
     accuracy = float((np.dot(Y, predictions.T) + np.dot(1 - Y, 1 - predictions.T)) / float(Y.size) * 100)
     print("Accuracy for {} hidden units: {} %".format(n_h, accuracy))
 plt.show()
-'''
+
 
 # 8 performance on other datasets
 
@@ -348,4 +344,3 @@ if dataset == "blobs":
 
 # Visualize the data
 plt.scatter(X[0, :], X[1, :], c=np.squeeze(Y), s=40, cmap=plt.cm.Spectral)
-plt.show()

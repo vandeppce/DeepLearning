@@ -1,10 +1,6 @@
 import numpy as np
-import scipy
 import matplotlib.pyplot as plt
-from PIL import Image
-import h5py
-from scipy import ndimage
-from NeuralNetwork.lr_utils import load_dataset
+from NeuralNetwork.LogisticRegression.lr_utils import load_dataset
 
 train_set_x_orig, train_set_y, test_set_x_orig, test_set_y, classes = load_dataset()     #加载数据
 
