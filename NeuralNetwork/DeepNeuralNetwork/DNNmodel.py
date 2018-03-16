@@ -75,12 +75,12 @@ def initialize_parameters_deep(layer_dims):
         bl: bias vector of shape (layer_dims[l], 1)
     """
 
-    np.random.seed(3)
+    np.random.seed(1)
     L = len(layer_dims) # the depth of the network
     parameter = {}
 
     for i in range(1, L):
-        parameter["W" + str(i)] = np.random.randn(layer_dims[i], layer_dims[i - 1]) * 0.01
+        parameter["W" + str(i)] = np.random.randn(layer_dims[i], layer_dims[i - 1]) / np.sqrt(layer_dims[i - 1])   # * 0.01
         parameter["b" + str(i)] = np.zeros(shape=(layer_dims[i], 1))
 
         assert(parameter["W" + str(i)].shape == (layer_dims[i], layer_dims[i - 1]))
@@ -396,4 +396,3 @@ print ("b1 = "+ str(parameters["b1"]))
 print ("W2 = "+ str(parameters["W2"]))
 print ("b2 = "+ str(parameters["b2"]))
 '''
-
