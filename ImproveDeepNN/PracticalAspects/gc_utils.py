@@ -36,13 +36,13 @@ def dictionary_to_vector(parameters):
     for key in ["W1", "b1", "W2", "b2", "W3", "b3"]:
         
         # flatten parameter
-        new_vector = np.reshape(parameters[key], (-1,1))
+        new_vector = np.reshape(parameters[key], (-1,1))       # reshape parameters[key] to 1-D vector
         keys = keys + [key]*new_vector.shape[0]
         
         if count == 0:
             theta = new_vector
         else:
-            theta = np.concatenate((theta, new_vector), axis=0)
+            theta = np.concatenate((theta, new_vector), axis=0)   # paste all parameters[key] to 1-D vector
         count = count + 1
 
     return theta, keys
