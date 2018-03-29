@@ -354,6 +354,7 @@ def L_model_backward(AL, Y, caches):
         grads["dA" + str(L - i)] = dA
         grads["dW" + str(L - i)] = dW
         grads["db" + str(L - i)] = db
+        grads["dA_prev"] = dA_prev          #计算dA0
 
     return grads
 

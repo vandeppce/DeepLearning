@@ -205,7 +205,6 @@ def L_layer_model(X, Y, layers_dims, learning_rate = 0.0075, num_iterations = 30
 # train
 layers_dims = [12288, 20, 7, 5, 1]
 parameters = L_layer_model(train_x, train_y, layers_dims, num_iterations = 2500, print_cost = True)
-'''
 # predict
 predictions_train = predict(train_x, train_y, parameters)
 predictions_test = predict(test_x, test_y, parameters)
@@ -217,6 +216,7 @@ predictions_test = predict(test_x, test_y, parameters)
 
 # 3 test on own image
 
+'''
 my_image = "my_image2.jpg" # change this to the name of your image file
 my_label_y = [1] # the true class of your image (1 -> cat, 0 -> non-cat)
 
