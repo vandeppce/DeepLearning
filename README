@@ -1,1 +1,3 @@
 code for DeepLearning course. 
+2018/3/29 Adversarial Examples are added to original images, and images are misclassified.
+2018/3/30 A neural network is used to general a cat image, then it general noise image, but I don't confirm what I have done is correct.
