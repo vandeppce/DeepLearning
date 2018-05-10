@@ -4,3 +4,4 @@ code for DeepLearning course:
 2018/4/14 mini-batch gradient descent, stochastic gradient descent, and momentum
 2018/4/17 adam and model including all the optimization methods
 2018/4/28 3-hidden-layers neural network implemented by TensorFlow
+2018/5/10 step-step CNN
