@@ -85,7 +85,7 @@ def compute_cost(a3, Y):
     Implement the cost function
     
     Arguments:
-    a3 -- post-activation, output of forward propagation
+    a3 -- post-activation, out of forward propagation
     Y -- "true" labels vector, same shape as a3
     
     Returns:
@@ -143,7 +143,7 @@ def backward_propagation(X, Y, cache):
     Arguments:
     X -- input dataset, of shape (input size, number of examples)
     Y -- true "label" vector (containing 0 if cat, 1 if non-cat)
-    cache -- cache output from forward_propagation()
+    cache -- cache out from forward_propagation()
     
     Returns:
     gradients -- A dictionary with the gradients with respect to each parameter, activation and pre-activation variables

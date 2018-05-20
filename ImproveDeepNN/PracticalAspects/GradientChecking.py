@@ -119,7 +119,7 @@ def backward_propagation_n(X, Y, cache):
     Arguments:
     X -- input datapoint, of shape (input size, 1)
     Y -- true "label"
-    cache -- cache output from forward_propagation_n()
+    cache -- cache out from forward_propagation_n()
 
     Returns:
     gradients -- A dictionary with the gradients of the cost with respect to each parameter, activation and pre-activation variables.
@@ -150,11 +150,11 @@ def backward_propagation_n(X, Y, cache):
 
 def gradient_check_n(parameters, gradients, X, Y, epsilon = 1e-7):
     """
-    Checks if backward_propagation_n computes correctly the gradient of the cost output by forward_propagation_n
+    Checks if backward_propagation_n computes correctly the gradient of the cost out by forward_propagation_n
 
     Arguments:
     parameters -- python dictionary containing your parameters "W1", "b1", "W2", "b2", "W3", "b3":
-    grad -- output of backward_propagation_n, contains gradients of the cost with respect to the parameters.
+    grad -- out of backward_propagation_n, contains gradients of the cost with respect to the parameters.
     x -- input datapoint, of shape (input size, 1)
     y -- true "label"
     epsilon -- tiny shift to the input to compute approximated gradient with formula(1)

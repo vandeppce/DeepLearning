@@ -8,7 +8,7 @@ def sigmoid(Z):
     Z -- numpy array of any shape
     
     Returns:
-    A -- output of sigmoid(z), same shape as Z
+    A -- out of sigmoid(z), same shape as Z
     cache -- returns Z as well, useful during backpropagation
     """
     

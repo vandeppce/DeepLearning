@@ -156,7 +156,7 @@ def compute_cost(z3, Y):
     Computes the cost
     
     Arguments:
-    z3 -- output of forward propagation (output of the last LINEAR unit), of shape (10, number of examples)
+    z3 -- out of forward propagation (out of the last LINEAR unit), of shape (10, number of examples)
     Y -- "true" labels vector placeholder, same shape as z3
     
     Returns:
@@ -186,9 +186,9 @@ def model(X_train, Y_train, X_test, Y_test, learning_rate = 0.0001,
     
     Arguments:
     X_train -- training set, of shape (input size = 12288, number of training examples = 1080)
-    Y_train -- test set, of shape (output size = 6, number of training examples = 1080)
+    Y_train -- test set, of shape (out size = 6, number of training examples = 1080)
     X_test -- training set, of shape (input size = 12288, number of training examples = 120)
-    Y_test -- test set, of shape (output size = 6, number of test examples = 120)
+    Y_test -- test set, of shape (out size = 6, number of test examples = 120)
     learning_rate -- learning rate of the optimization
     num_epochs -- number of epochs of the optimization loop
     minibatch_size -- size of a minibatch

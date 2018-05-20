@@ -42,10 +42,10 @@ print ("Y_test shape: " + str(Y_test.shape))
 '''
 Your goal is to build an algorithm capable of recognizing a sign with high accuracy. 
 To do so, you are going to build a tensorflow model that is almost the same as one you have previously built in numpy for cat recognition 
-(but now using a softmax output). It is a great occasion to compare your numpy implementation to the tensorflow one.
+(but now using a softmax out). It is a great occasion to compare your numpy implementation to the tensorflow one.
 
 The model is LINEAR -> RELU -> LINEAR -> RELU -> LINEAR -> SOFTMAX. 
-The SIGMOID output layer has been converted to a SOFTMAX. 
+The SIGMOID out layer has been converted to a SOFTMAX. 
 A SOFTMAX layer generalizes SIGMOID to when there are more than two classes.
 '''
 
@@ -126,7 +126,7 @@ with tf.Session() as sess:
 #3 forward propagetion
 '''
 It is important to note that the forward propagation stops at z3. 
-The reason is that in tensorflow the last linear layer output is given as input to the function computing the loss. 
+The reason is that in tensorflow the last linear layer out is given as input to the function computing the loss. 
 Therefore, you don’t need a3!
 '''
 
@@ -140,7 +140,7 @@ def forward_propagation(X, parameters):
                   the shapes are given in initialize_parameters
 
     Returns:
-    Z3 -- the output of the last LINEAR unit
+    Z3 -- the out of the last LINEAR unit
     """
 
     W1 = parameters['W1']
@@ -169,7 +169,7 @@ with tf.Session() as sess:
     print("Z3 = " + str(Z3))
 '''
 
-#You may have noticed that the forward propagation doesn’t output any cache. You will understand why below, when we get to back propagation.
+#You may have noticed that the forward propagation doesn’t out any cache. You will understand why below, when we get to back propagation.
 
 #4 compute cost
 
@@ -185,7 +185,7 @@ def compute_cost(Z3, Y):
     Computes the cost
 
     Arguments:
-    Z3 -- output of forward propagation (output of the last LINEAR unit), of shape (6, number of examples)
+    Z3 -- out of forward propagation (out of the last LINEAR unit), of shape (6, number of examples)
     Y -- "true" labels vector placeholder, same shape as Z3
 
     Returns:
@@ -233,9 +233,9 @@ def model(X_train, Y_train, X_test, Y_test, learning_rate = 0.0001,
 
     Arguments:
     X_train -- training set, of shape (input size = 12288, number of training examples = 1080)
-    Y_train -- test set, of shape (output size = 6, number of training examples = 1080)
+    Y_train -- test set, of shape (out size = 6, number of training examples = 1080)
     X_test -- training set, of shape (input size = 12288, number of training examples = 120)
-    Y_test -- test set, of shape (output size = 6, number of test examples = 120)
+    Y_test -- test set, of shape (out size = 6, number of test examples = 120)
     learning_rate -- learning rate of the optimization
     num_epochs -- number of epochs of the optimization loop
     minibatch_size -- size of a minibatch
@@ -249,7 +249,7 @@ def model(X_train, Y_train, X_test, Y_test, learning_rate = 0.0001,
     tf.set_random_seed(1)  # to keep consistent results
     seed = 3  # to keep consistent results
     (n_x, m) = X_train.shape  # (n_x: input size, m : number of examples in the train set)
-    n_y = Y_train.shape[0]  # n_y : output size
+    n_y = Y_train.shape[0]  # n_y : out size
     costs = []  # To keep track of the cost
 
     #defining computing graphs

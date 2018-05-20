@@ -29,7 +29,7 @@ def forward_propagation_with_dropout(X, parameters, keep_prob):
     keep_prob - probability of keeping a neuron active during drop-out, scalar
 
     Returns:
-    A3 -- last activation value, output of the forward propagation, of shape (1,1)
+    A3 -- last activation value, out of the forward propagation, of shape (1,1)
     cache -- tuple, information stored for computing the backward propagation
     """
 
@@ -74,8 +74,8 @@ def compute_cost_with_regularization(y_hat, Y, parameters, lambd):
     Implement the cost function with L2 regularization. See formula (2) above.
 
     Arguments:
-    y_hat -- post-activation, output of forward propagation, of shape (output size, number of examples)
-    Y -- "true" labels vector, of shape (output size, number of examples)
+    y_hat -- post-activation, out of forward propagation, of shape (out size, number of examples)
+    Y -- "true" labels vector, of shape (out size, number of examples)
     parameters -- python dictionary containing parameters of the model
 
     Returns:
@@ -106,8 +106,8 @@ def backward_propagation_with_regularization(X, Y, cache, lambd):
 
     Arguments:
     X -- input dataset, of shape (input size, number of examples)
-    Y -- "true" labels vector, of shape (output size, number of examples)
-    cache -- cache output from forward_propagation()
+    Y -- "true" labels vector, of shape (out size, number of examples)
+    cache -- cache out from forward_propagation()
     lambd -- regularization hyperparameter, scalar
 
     Returns:
@@ -151,8 +151,8 @@ def backward_propagation_with_dropout(X, Y, cache, keep_prob):
 
     Arguments:
     X -- input dataset, of shape (2, number of examples)
-    Y -- "true" labels vector, of shape (output size, number of examples)
-    cache -- cache output from forward_propagation_with_dropout()
+    Y -- "true" labels vector, of shape (out size, number of examples)
+    cache -- cache out from forward_propagation_with_dropout()
     keep_prob - probability of keeping a neuron active during drop-out, scalar
 
     Returns:
@@ -198,7 +198,7 @@ def model(X, Y, learning_rate = 0.3, num_iterations = 30000, print_cost = True, 
 
     Arguments:
     X -- input data, of shape (input size, number of examples)
-    Y -- true "label" vector (1 for blue dot / 0 for red dot), of shape (output size, number of examples)
+    Y -- true "label" vector (1 for blue dot / 0 for red dot), of shape (out size, number of examples)
     learning_rate -- learning rate of the optimization
     num_iterations -- number of iterations of the optimization loop
     print_cost -- If True, print the cost every 10000 iterations
@@ -296,7 +296,7 @@ Observations:
  L2-regularization relies on the assumption that a model with small weights is simpler than a model with large weights. 
  Thus, by penalizing the square values of the weights in the cost function you drive all the weights to smaller values. 
  It becomes too costly for the cost to have large weights! 
- This leads to a smoother model in which the output changes more slowly as the input changes.
+ This leads to a smoother model in which the out changes more slowly as the input changes.
  
  What you should remember – the implications of L2-regularization on: 
 - The cost computation: 
@@ -330,7 +330,7 @@ What you should remember about dropout:
 - Apply dropout both during forward and backward propagation. 
 - During training time, divide each dropout layer by keep_prob to keep the same expected value for the activations. 
 For example, if keep_prob is 0.5, then we will on average shut down half the nodes, 
-so the output will be scaled by 0.5 since only the remaining half are contributing to the solution. 
-Dividing by 0.5 is equivalent to multiplying by 2. Hence, the output now has the same expected value. 
+so the out will be scaled by 0.5 since only the remaining half are contributing to the solution. 
+Dividing by 0.5 is equivalent to multiplying by 2. Hence, the out now has the same expected value. 
 You can check that this works even when keep_prob is other values than 0.5.
 '''

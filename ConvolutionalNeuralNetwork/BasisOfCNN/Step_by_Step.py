@@ -48,7 +48,7 @@ plt.show()
 
 def conv_single_step(a_slice_prev, W, b):
     """
-    Apply one filter defined by parameters W on a single slice (a_slice_prev) of the output activation
+    Apply one filter defined by parameters W on a single slice (a_slice_prev) of the out activation
     of the previous layer.
 
     Arguments:
@@ -86,13 +86,13 @@ def conv_forward(A_prev, W, b, hparameters):
     Implements the forward propagation for a convolution function
 
     Arguments:
-    A_prev -- output activations of the previous layer, numpy array of shape (m, n_H_prev, n_W_prev, n_C_prev)
+    A_prev -- out activations of the previous layer, numpy array of shape (m, n_H_prev, n_W_prev, n_C_prev)
     W -- Weights, numpy array of shape (f, f, n_C_prev, n_C)
     b -- Biases, numpy array of shape (1, 1, 1, n_C)
     hparameters -- python dictionary containing "stride" and "pad"
 
     Returns:
-    Z -- conv output, numpy array of shape (m, n_H, n_W, n_C)
+    Z -- conv out, numpy array of shape (m, n_H, n_W, n_C)
     cache -- cache of values needed for the conv_backward() function
     """
 
@@ -164,7 +164,7 @@ def pool_forward(A_prev, hparameters, mode = "max"):
     mode -- the pooling mode you would like to use, defined as a string ("max" or "average")
 
     Returns:
-    A -- output of the pool layer, a numpy array of shape (m, n_H, n_W, n_C)
+    A -- out of the pool layer, a numpy array of shape (m, n_H, n_W, n_C)
     cache -- cache used in the backward pass of the pooling layer, contains the input and hparameters
     """
 
@@ -229,8 +229,8 @@ def conv_backward(dZ, cache):
     Implement the backward propagation for a convolution function
 
     Arguments:
-    dZ -- gradient of the cost with respect to the output of the conv layer (Z), numpy array of shape (m, n_H, n_W, n_C)
-    cache -- cache of values needed for the conv_backward(), output of conv_forward()
+    dZ -- gradient of the cost with respect to the out of the conv layer (Z), numpy array of shape (m, n_H, n_W, n_C)
+    cache -- cache of values needed for the conv_backward(), out of conv_forward()
 
     Returns:
     dA_prev -- gradient of the cost with respect to the input of the conv layer (A_prev),
@@ -326,7 +326,7 @@ def distribute_value(dz, shape):
 
     Arguments:
     dz -- input scalar
-    shape -- the shape (n_H, n_W) of the output matrix for which we want to distribute the value of dz
+    shape -- the shape (n_H, n_W) of the out matrix for which we want to distribute the value of dz
 
     Returns:
     a -- Array of size (n_H, n_W) for which we distributed the value of dz
@@ -352,8 +352,8 @@ def pool_backward(dA, cache, mode = "max"):
     Implements the backward pass of the pooling layer
 
     Arguments:
-    dA -- gradient of cost with respect to the output of the pooling layer, same shape as A
-    cache -- cache output from the forward pass of the pooling layer, contains the layer's input and hparameters
+    dA -- gradient of cost with respect to the out of the pooling layer, same shape as A
+    cache -- cache out from the forward pass of the pooling layer, contains the layer's input and hparameters
     mode -- the pooling mode you would like to use, defined as a string ("max" or "average")
 
     Returns:

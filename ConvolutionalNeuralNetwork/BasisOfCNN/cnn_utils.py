@@ -78,7 +78,7 @@ def forward_propagation_for_predict(X, parameters):
                   the shapes are given in initialize_parameters
 
     Returns:
-    Z3 -- the output of the last LINEAR unit
+    Z3 -- the out of the last LINEAR unit
     """
     
     # Retrieve the parameters from the dictionary "parameters" 

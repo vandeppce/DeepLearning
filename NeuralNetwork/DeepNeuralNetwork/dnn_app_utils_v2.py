@@ -11,7 +11,7 @@ def sigmoid(Z):
     Z -- numpy array of any shape
     
     Returns:
-    A -- output of sigmoid(z), same shape as Z
+    A -- out of sigmoid(z), same shape as Z
     cache -- returns Z as well, useful during backpropagation
     """
     
@@ -106,7 +106,7 @@ def initialize_parameters(n_x, n_h, n_y):
     Argument:
     n_x -- size of the input layer
     n_h -- size of the hidden layer
-    n_y -- size of the output layer
+    n_y -- size of the out layer
     
     Returns:
     parameters -- python dictionary containing your parameters:
@@ -193,7 +193,7 @@ def linear_activation_forward(A_prev, W, b, activation):
     activation -- the activation to be used in this layer, stored as a text string: "sigmoid" or "relu"
 
     Returns:
-    A -- the output of the activation function, also called the post-activation value 
+    A -- the out of the activation function, also called the post-activation value
     cache -- a python dictionary containing "linear_cache" and "activation_cache";
              stored for computing the backward pass efficiently
     """
@@ -219,7 +219,7 @@ def L_model_forward(X, parameters):
     
     Arguments:
     X -- data, numpy array of shape (input size, number of examples)
-    parameters -- output of initialize_parameters_deep()
+    parameters -- out of initialize_parameters_deep()
     
     Returns:
     AL -- last post-activation value
@@ -273,7 +273,7 @@ def linear_backward(dZ, cache):
     Implement the linear portion of backward propagation for a single layer (layer l)
 
     Arguments:
-    dZ -- Gradient of the cost with respect to the linear output (of current layer l)
+    dZ -- Gradient of the cost with respect to the linear out (of current layer l)
     cache -- tuple of values (A_prev, W, b) coming from the forward propagation in the current layer
 
     Returns:
@@ -325,7 +325,7 @@ def L_model_backward(AL, Y, caches):
     Implement the backward propagation for the [LINEAR->RELU] * (L-1) -> LINEAR -> SIGMOID group
     
     Arguments:
-    AL -- probability vector, output of the forward propagation (L_model_forward())
+    AL -- probability vector, out of the forward propagation (L_model_forward())
     Y -- true "label" vector (containing 0 if non-cat, 1 if cat)
     caches -- list of caches containing:
                 every cache of linear_activation_forward() with "relu" (there are (L-1) or them, indexes from 0 to L-2)
@@ -365,7 +365,7 @@ def update_parameters(parameters, grads, learning_rate):
     
     Arguments:
     parameters -- python dictionary containing your parameters 
-    grads -- python dictionary containing your gradients, output of L_model_backward
+    grads -- python dictionary containing your gradients, out of L_model_backward
     
     Returns:
     parameters -- python dictionary containing your updated parameters 

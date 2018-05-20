@@ -18,7 +18,7 @@ import keras.backend as K
 K.set_image_data_format('channels_last')
 K.set_learning_phase(1)
 
-# 1. The identity block ---- for when the dimension of input and output is same
+# 1. The identity block ---- for when the dimension of input and out is same
 
 
 def identity_block(X, f, filters, stage, block):
@@ -33,7 +33,7 @@ def identity_block(X, f, filters, stage, block):
     :param block: string/character, used to name the layers, depending on their position in the network
 
     :return:
-    X: output of the identity block, tensor of shape(n_H, n_W, n_C)
+    X: out of the identity block, tensor of shape(n_H, n_W, n_C)
     """
 
     # defining name basis
@@ -79,7 +79,7 @@ with tf.Session() as test:
     print("out = " + str(out[0][1][1][0]))
 '''
 
-# 2. The convolutional block ---- for when the dimension of input doesn't match dimension of output
+# 2. The convolutional block ---- for when the dimension of input doesn't match dimension of out
 
 def convolutional_block(X, f, filters, stage, block, s = 2):
     """
@@ -94,7 +94,7 @@ def convolutional_block(X, f, filters, stage, block, s = 2):
     :param s: integer, specifying the stride to be used
 
     :return:
-    X: output of the convolutional block, tensor of shape (n_H, n_W, n_C)
+    X: out of the convolutional block, tensor of shape (n_H, n_W, n_C)
     """
 
     # defining name basis
@@ -199,7 +199,7 @@ def ResNet50(input_shape = (64, 64, 3), classes = 6):
     # avgpool
     X = AveragePooling2D(pool_size=(2, 2), name='avg_pool')(X)
 
-    # output layer
+    # out layer
     X = Flatten()(X)
     X = Dense(classes, activation='softmax', name='fc' + str(classes), kernel_initializer=glorot_uniform(seed=0))(X)
 

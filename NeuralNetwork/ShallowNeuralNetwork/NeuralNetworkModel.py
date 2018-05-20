@@ -7,12 +7,12 @@ def layer_sizes(X, Y):
     """
     Arguments:
     :param X: input dataset of shape (input size, number of examples)
-    :param Y: labels of shape (output size, number of examples)
+    :param Y: labels of shape (out size, number of examples)
 
     :return:
     n_x: the size of the input layer
     n_h: the size of hidden layer
-    n_y: the size of the output layer
+    n_y: the size of the out layer
     """
 
     n_x = X.shape[0]
@@ -27,7 +27,7 @@ n_x, n_h, n_y = layer_sizes(X_assess, Y_assess)
 print("The number of examples is: " + str(X_assess.shape[1]))
 print("The size of the input layer is: " + str(n_x))
 print("The size of the hidden layer is: " + str(n_h))
-print("The size of the output layer is: " + str(n_y))
+print("The size of the out layer is: " + str(n_y))
 '''
 # 2 initialize the model's parameters
 def initialize_parameters(n_x, n_h, n_y):
@@ -35,7 +35,7 @@ def initialize_parameters(n_x, n_h, n_y):
     Arguments:
     :param n_x: size of the input layer
     :param n_h: size of the hidden layer
-    :param n_y: size of the output layer
+    :param n_y: size of the out layer
 
     :return:
     params: python dictionary containing parameters
@@ -78,10 +78,10 @@ def forward_propagation(X, parameters):
     """
     Arguments:
     :param X: input data of size (n_x, m)
-    :param parameters: python dictionary containing parameters (output of initialization function)
+    :param parameters: python dictionary containing parameters (out of initialization function)
 
     :return:
-    A2: the sigmoid output of the second activation
+    A2: the sigmoid out of the second activation
     cache: a dictionary containing "Z1", "A1", "Z2" and "A2"
 
     """
@@ -114,7 +114,7 @@ print(np.mean(cache['Z1']), np.mean(cache['A1']), np.mean(cache['Z2']), np.mean(
 def compute_cost(A2, Y, parameters):
     """
     Arguments:
-    :param A2: The sigmoid output of the second activation, of shape(1, m)
+    :param A2: The sigmoid out of the second activation, of shape(1, m)
     :param Y: "true" labels vector of shape (1, m)
     :param parameters: python dictionary containing parameters W1, b1, W2, b2
 

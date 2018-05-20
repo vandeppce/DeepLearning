@@ -113,7 +113,7 @@ def cost(logits, labels):
     Computes the cost using the sigmoid cross entropy
 
     Arguments:
-    logits -- vector containing z, output of the last linear unit (before the final sigmoid activation)
+    logits -- vector containing z, out of the last linear unit (before the final sigmoid activation)
     labels -- vector of labels y (1 or 0)
 
     Note: What we've been calling "z" and "y" in this class are respectively called "logits" and "labels"

@@ -18,7 +18,7 @@ def initialize_parameters(n_x, n_h, n_y):
     Arguments:
     :param n_x: size of the input layer
     :param n_h: size of the hidden layer
-    :param n_y: size of the output layer
+    :param n_y: size of the out layer
 
     :return:
     parameters: python dictionary containing parameters:
@@ -139,7 +139,7 @@ def linear_activation_forward(A_prev, W, b, activation):
     :param activation: the activation to be used in this layer, stored as a text string: "sigmoid" or "relu"
 
     :return:
-    A: the output of the activation function, also called the post-activation parameter
+    A: the out of the activation function, also called the post-activation parameter
     cache: a python dictionary containing "linear_cache" and "activation_cache"; stored for computing the backward pass efficiently
     """
 
@@ -173,7 +173,7 @@ def L_model_forward(X, parameters):
     """
     Arguments:
     :param X: data, numpy array of shape (input size, number of examples)
-    :param parameters: output of initialize_parameters_deep()
+    :param parameters: out of initialize_parameters_deep()
 
     :return:
     AL: last post-activation value
@@ -239,7 +239,7 @@ print("cost = " + str(compute_cost(AL, Y)))
 def linear_backward(dZ, cache):
     """
     Arguments:
-    :param dZ: gradient of the cost with respect to the linear output (of current layer l)
+    :param dZ: gradient of the cost with respect to the linear out (of current layer l)
     :param cache: dictionary of value values (A_prev, W, b) coming from the forward propagation in the current layer
 
     :return:
@@ -324,7 +324,7 @@ def L_model_backward(AL, Y, caches):
     Implement the backward propagation for the [LINEAR->RELU] * (L-1) -> LINEAR -> SIGMOID group
 
     Arguments:
-    AL -- probability vector, output of the forward propagation (L_model_forward())
+    AL -- probability vector, out of the forward propagation (L_model_forward())
     Y -- true "label" vector (containing 0 if non-cat, 1 if cat)
     caches -- list of caches containing:
                     every cache of linear_activation_forward() with "relu" (it's caches[l], for l in range(L-1) i.e l = 0...L-2)
@@ -372,7 +372,7 @@ def update_parameters(parameters, grads, learning_rate):
 
     Arguments:
     parameters -- python dictionary containing your parameters
-    grads -- python dictionary containing your gradients, output of L_model_backward
+    grads -- python dictionary containing your gradients, out of L_model_backward
 
     Returns:
     parameters -- python dictionary containing your updated parameters
